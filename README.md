@@ -17,7 +17,7 @@ A Java-based application that allows users to create resumes effortlessly. It pr
 - **Export Options**: Export your resume as a PDF or Word document to share with potential employers.
 
 ## `Prerequisites`
-To run the Airline Reservation Builder, you need to have the following software installed on your machine:
+To run the Resume Builder, you need to have the following software installed on your machine:
 - [Java Development Kit (JDK)](https://www.oracle.com/in/java/technologies/downloads/#jdk20-linux)
 - [NetBeans IDE (or any other Java IDE of your choice)](https://netbeans.apache.org/download/index.html)
 
