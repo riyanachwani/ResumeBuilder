@@ -22,14 +22,6 @@ public class PrintFrame extends javax.swing.JFrame {
      */
     public PrintFrame() {
         initComponents();
-        BufferedImage image = new BufferedImage(
-                getWidth(), getHeight(),
-                BufferedImage.TYPE_INT_RGB);
-
-        Graphics g = image.getGraphics();
-        paintAll(g);
-        g.dispose();
-
     }
 
     /**
