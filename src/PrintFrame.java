@@ -6,6 +6,17 @@ import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.print.PrintService;
+import javax.print.attribute.HashPrintRequestAttributeSet;
+import javax.print.attribute.PrintRequestAttributeSet;
+import javax.print.attribute.standard.MediaSizeName;
+import javax.print.attribute.standard.OrientationRequested;
+import javax.print.attribute.standard.PrintQuality;
+import javax.print.attribute.standard.PrinterResolution;
+import javax.print.attribute.standard.Sides;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -69,7 +80,7 @@ public class PrintFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -86,7 +97,7 @@ public class PrintFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 277, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel4))
@@ -105,13 +116,13 @@ public class PrintFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(623, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(34, 34, 34))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,47 +130,73 @@ public class PrintFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        //PrintFrame frame = new PrintFrame();
+        // Get the default printer job instance, which allows us to interact with the printer
         PrinterJob job = PrinterJob.getPrinterJob();
-        job.setJobName("Print Data");
 
-        Printable printable = new Printable() {
-            public int print(Graphics pg, PageFormat pf, int pageNum) {
-                pf.setOrientation(PageFormat.LANDSCAPE);
-                if (pageNum > 0) {
-                    return Printable.NO_SUCH_PAGE;
-                }
-
-                Graphics2D g2 = (Graphics2D) pg;
-                double scaleX = pf.getImageableWidth() / jPanel1.getWidth();
-                double scaleY = pf.getImageableHeight() / jPanel1.getHeight();
-                double scale = Math.min(scaleX, scaleY);
-
-                g2.translate(pf.getImageableX(), pf.getImageableY());
-                g2.scale(scale, scale);
-
-                jPanel1.printAll(g2);
-
-                return Printable.PAGE_EXISTS;
-            }
-        };
-
-        job.setPrintable(printable);
-
-        boolean ok = job.printDialog();
-        if (ok) {
+// Display the print dialog to allow the user to choose printer settings and confirm printing
+        if (job.printDialog()) {
             try {
-                job.print();
-            } catch (PrinterException ex) {
+                // Set the desired resolution (dots per inch) for the image
+                int dpi = 1200;
+
+                // Calculate the scaling factor to achieve the desired DPI
+                double scaleFactor = dpi / 72.0; // 72 DPI is the default resolution
+
+                // Calculate the width and height of the BufferedImage based on the panel size and the desired DPI
+                int width = (int) (jPanel1.getWidth() * scaleFactor);
+                int height = (int) (jPanel1.getHeight() * scaleFactor);
+
+                // Create a BufferedImage with the calculated width, height, and RGB color type
+                BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+
+                // Create a Graphics2D object to draw on the BufferedImage
+                Graphics2D graphics2D = image.createGraphics();
+
+                // Scale the graphics to the desired DPI, effectively increasing the resolution of the image
+                graphics2D.scale(scaleFactor, scaleFactor);
+
+                // Print the content of jPanel1 to the BufferedImage, effectively capturing the panel content
+                jPanel1.print(graphics2D);
+
+                // Create a File object to specify the output file path for the generated PDF
+                File outputFile = new File("panel_content.pdf");
+
+                // Write the BufferedImage to the PDF file using Apache PDFBox library
+                ImageIO.write(image, "pdf", outputFile);
+
+                // Create a set of attributes to specify printing options (e.g., paper size, orientation, etc.)
+                PrintRequestAttributeSet attr = new HashPrintRequestAttributeSet();
+
+                // Add ISO A4 as the media size (standard A4 paper size: 210 x 297 mm)
+                attr.add(MediaSizeName.ISO_A4);
+
+                // Set the orientation to portrait (vertically aligned)
+                attr.add(OrientationRequested.PORTRAIT);
+
+                // Set the print quality to high
+                attr.add(PrintQuality.HIGH);
+
+                // Set the printer resolution to the desired DPI
+                attr.add(new PrinterResolution(dpi, dpi, PrinterResolution.DPI));
+
+                // Set the number of sides to be printed (in this case, one-sided printing)
+                attr.add(Sides.ONE_SIDED);
+
+                // Set the ImagePrintable instance as the Printable for the printer job
+                job.setPrintable(new ImagePrintable(image, job.getPrintService()));
+
+                // Print the panel content to the selected printer with the specified print attributes
+                job.print(attr);
+            } catch (PrinterException | IOException ex) {
+                // Handle any exceptions that may occur during the printing process
                 ex.printStackTrace();
             }
         }
@@ -170,6 +207,43 @@ public class PrintFrame extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    // Define a class that implements the Printable interface, which is used for printing custom content
+    private static class ImagePrintable implements Printable {
+
+        // Declare two instance variables to store the BufferedImage and PrintService
+        private final BufferedImage image;
+        private final PrintService printService;
+
+        // Constructor to initialize the instance variables when an object of this class is created
+        public ImagePrintable(BufferedImage image, PrintService printService) {
+            // Store the provided BufferedImage and PrintService in the instance variables
+            this.image = image;
+            this.printService = printService;
+        }
+
+        // Implement the print() method from the Printable interface
+        @Override
+        public int print(Graphics g, PageFormat pageFormat, int pageIndex) {
+            // Check if the current page index is greater than 0, indicating a non-existent page
+            if (pageIndex > 0) {
+                // Return a flag indicating that there is no such page to print
+                return Printable.NO_SUCH_PAGE;
+            }
+
+            // Cast the Graphics object to Graphics2D, which allows more advanced graphics operations
+            Graphics2D g2d = (Graphics2D) g;
+
+            // Translate the origin of the graphics to the starting point of the printable area
+            g2d.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
+
+            // Draw the BufferedImage on the printable area, scaling it to fit the page
+            g2d.drawImage(image, 0, 0, (int) pageFormat.getImageableWidth(), (int) pageFormat.getImageableHeight(), null);
+
+            // Return a flag indicating that the page exists and has been printed successfully
+            return Printable.PAGE_EXISTS;
+        }
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
