@@ -42,10 +42,10 @@ public class Frame1 extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         syear = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        education1 = new javax.swing.JTextArea();
         dyear = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        education2 = new javax.swing.JTextArea();
         jPanel5 = new javax.swing.JPanel();
         cer1 = new javax.swing.JTextField();
         cer2 = new javax.swing.JTextField();
@@ -158,13 +158,13 @@ public class Frame1 extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("St. Mary's Higher Secondary School | Mhow, Madhya Pradesh Higher Secondary (10+2)\nResult - 90.6% ");
-        jTextArea1.setWrapStyleWord(true);
-        jScrollPane1.setViewportView(jTextArea1);
+        education1.setColumns(20);
+        education1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        education1.setLineWrap(true);
+        education1.setRows(5);
+        education1.setText("St. Mary's Higher Secondary School | Mhow, Madhya Pradesh Higher Secondary (10+2)\nResult - 90.6% ");
+        education1.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(education1);
 
         dyear.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         dyear.setForeground(new java.awt.Color(255, 102, 102));
@@ -175,13 +175,13 @@ public class Frame1 extends javax.swing.JFrame {
             }
         });
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jTextArea3.setLineWrap(true);
-        jTextArea3.setRows(5);
-        jTextArea3.setText("Medicaps University | Indore, Madhya Pradesh\nBachelor of Computer\nApplications\nCGPA - 9.86");
-        jTextArea3.setWrapStyleWord(true);
-        jScrollPane4.setViewportView(jTextArea3);
+        education2.setColumns(20);
+        education2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        education2.setLineWrap(true);
+        education2.setRows(5);
+        education2.setText("Medicaps University | Indore, Madhya Pradesh\nBachelor of Computer\nApplications\nCGPA - 9.86");
+        education2.setWrapStyleWord(true);
+        jScrollPane4.setViewportView(education2);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -457,10 +457,16 @@ public class Frame1 extends javax.swing.JFrame {
         String contact1 = contact.getText();
         String mail1 = mail.getText();
         String git1 = git.getText();
+        String ed1 = education1.getText();
+        String ed2 = education2.getText();
+        ed1 = "<html>" + ed1.replaceAll("\n", "<br>") + "</html>";
+        ed2 = "<html>" + ed2.replaceAll("\n", "<br>") + "</html>";
 
         PrintFrame obj = new PrintFrame();
         obj.profile.setText(text);
         obj.name.setText(n);
+        obj.schoolinfo.setText(ed1);
+        obj.degreeinfo.setText(ed2);
         obj.numb.setText(contact1);
         obj.giturl.setText(git1);
         obj.email.setText(mail1);
@@ -593,6 +599,8 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JTextField cer3;
     private javax.swing.JTextField contact;
     private javax.swing.JTextField dyear;
+    private javax.swing.JTextArea education1;
+    private javax.swing.JTextArea education2;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JTextField git;
     private javax.swing.JButton jButton1;
@@ -611,8 +619,6 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField mail;
     private javax.swing.JTextArea profiletarea;
