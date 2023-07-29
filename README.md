@@ -14,7 +14,7 @@ A Java-based application that allows users to create resumes effortlessly. It pr
 
 - **Input Validation**: The application validates user inputs, ensuring that essential information is not missing and follows the required format.
 
-- **Export Options**: Export your resume as a PDF document to share with potential employers.
+- **Export Options**: Export your resume as a PDF document or print it and share with potential employers.
 
 ## `Prerequisites`
 To run the Resume Builder, you need to have the following software installed on your machine:
