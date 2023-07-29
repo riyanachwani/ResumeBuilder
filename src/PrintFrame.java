@@ -45,13 +45,11 @@ public class PrintFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 7), new java.awt.Dimension(0, 7), new java.awt.Dimension(32767, 7));
         name = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         certificates = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        profile = new javax.swing.JLabel();
+        profile1 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -63,10 +61,6 @@ public class PrintFrame extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 210));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel2.setText("Certificates");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 160, 50));
-
         filler1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(255, 153, 153), new java.awt.Color(255, 153, 153), null));
         jPanel1.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 10, 530));
 
@@ -76,27 +70,23 @@ public class PrintFrame extends javax.swing.JFrame {
         name.setText("jLabel3");
         name.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 204, 204), new java.awt.Color(255, 153, 153)));
         name.setOpaque(true);
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 440, 70));
+        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 440, 70));
 
         jLabel1.setBackground(new java.awt.Color(204, 204, 255));
         jLabel1.setOpaque(true);
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 800, 90));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 740, 90));
 
         certificates.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         certificates.setText("aaaa");
-        certificates.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 204, 204), null));
-        jPanel1.add(certificates, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 520, 90));
+        certificates.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Certificates", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 0, 18))); // NOI18N
+        jPanel1.add(certificates, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 460, 160));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel3.setText("Profile");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 160, 50));
+        profile1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        profile1.setText("aaaa");
+        profile1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Profile", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 0, 18))); // NOI18N
+        jPanel1.add(profile1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 460, 160));
 
-        profile.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        profile.setText("aaaa");
-        profile.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 204, 204), null));
-        jPanel1.add(profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 520, 90));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 800, 680));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 740, 680));
 
         jPanel7.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -116,11 +106,10 @@ public class PrintFrame extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(281, 281, 281)
+                .addContainerGap(248, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16))
+                .addGap(41, 41, 41)
+                .addComponent(jButton1))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,7 +122,7 @@ public class PrintFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 60));
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -282,12 +271,10 @@ public class PrintFrame extends javax.swing.JFrame {
     private javax.swing.Box.Filler filler1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel7;
     public javax.swing.JLabel name;
-    public javax.swing.JLabel profile;
+    public javax.swing.JLabel profile1;
     // End of variables declaration//GEN-END:variables
 }

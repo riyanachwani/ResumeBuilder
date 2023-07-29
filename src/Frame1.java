@@ -449,7 +449,7 @@ public class Frame1 extends javax.swing.JFrame {
         String n = jTextField1.getText();
 
         PrintFrame obj = new PrintFrame();
-        obj.profile.setText(text);
+        obj.certificates.setText(text);
         obj.name.setText(n);
         obj.setVisible(true);
         dispose();
