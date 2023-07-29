@@ -40,10 +40,10 @@ public class Frame1 extends javax.swing.JFrame {
         skill3 = new javax.swing.JTextField();
         skill4 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        cer4 = new javax.swing.JTextField();
+        syear = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        cer5 = new javax.swing.JTextField();
+        dyear = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
         jPanel5 = new javax.swing.JPanel();
@@ -144,12 +144,17 @@ public class Frame1 extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "EDUCATION", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 0, 18))); // NOI18N
 
-        cer4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        cer4.setForeground(new java.awt.Color(255, 102, 102));
-        cer4.setText("2018-19");
-        cer4.addMouseListener(new java.awt.event.MouseAdapter() {
+        syear.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        syear.setForeground(new java.awt.Color(255, 102, 102));
+        syear.setText("2018-19");
+        syear.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cer4MouseClicked(evt);
+                syearMouseClicked(evt);
+            }
+        });
+        syear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                syearActionPerformed(evt);
             }
         });
 
@@ -161,12 +166,12 @@ public class Frame1 extends javax.swing.JFrame {
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
-        cer5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        cer5.setForeground(new java.awt.Color(255, 102, 102));
-        cer5.setText("2019-22");
-        cer5.addMouseListener(new java.awt.event.MouseAdapter() {
+        dyear.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        dyear.setForeground(new java.awt.Color(255, 102, 102));
+        dyear.setText("2019-22");
+        dyear.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cer5MouseClicked(evt);
+                dyearMouseClicked(evt);
             }
         });
 
@@ -189,19 +194,19 @@ public class Frame1 extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGap(0, 114, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cer4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cer5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(syear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dyear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(cer4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(syear, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cer5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dyear, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(41, Short.MAX_VALUE))
@@ -447,10 +452,20 @@ public class Frame1 extends javax.swing.JFrame {
         String text = profiletarea.getText();
         text = "<html>" + text.replaceAll("\n", "<br>") + "</html>";
         String n = jTextField1.getText();
+        String year1 = syear.getText();
+        String year2 = dyear.getText();
+        String contact1 = contact.getText();
+        String mail1 = mail.getText();
+        String git1 = git.getText();
 
         PrintFrame obj = new PrintFrame();
         obj.certificates.setText(text);
         obj.name.setText(n);
+        obj.numb.setText(contact1);
+        obj.giturl.setText(git1);
+        obj.email.setText(mail1);
+        obj.schoolyear.setText(year1);
+        obj.degreeyear.setText(year2);
         obj.setVisible(true);
         dispose();
 // TODO add your handling code here:
@@ -482,13 +497,13 @@ public class Frame1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cer3MouseClicked
 
-    private void cer4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cer4MouseClicked
+    private void syearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_syearMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_cer4MouseClicked
+    }//GEN-LAST:event_syearMouseClicked
 
-    private void cer5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cer5MouseClicked
+    private void dyearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dyearMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_cer5MouseClicked
+    }//GEN-LAST:event_dyearMouseClicked
 
     private void skill1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skill1MouseClicked
         skill1.setText("");
@@ -533,6 +548,10 @@ public class Frame1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_gitMouseClicked
 
+    private void syearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syearActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -572,9 +591,8 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JTextField cer1;
     private javax.swing.JTextField cer2;
     private javax.swing.JTextField cer3;
-    private javax.swing.JTextField cer4;
-    private javax.swing.JTextField cer5;
     private javax.swing.JTextField contact;
+    private javax.swing.JTextField dyear;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JTextField git;
     private javax.swing.JButton jButton1;
@@ -602,5 +620,6 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JTextField skill2;
     private javax.swing.JTextField skill3;
     private javax.swing.JTextField skill4;
+    private javax.swing.JTextField syear;
     // End of variables declaration//GEN-END:variables
 }
