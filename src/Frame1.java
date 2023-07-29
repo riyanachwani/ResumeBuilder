@@ -55,11 +55,11 @@ public class Frame1 extends javax.swing.JFrame {
         profiletarea = new javax.swing.JTextArea();
         jPanel8 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        contact = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        mail = new javax.swing.JTextField();
+        git = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -302,9 +302,14 @@ public class Frame1 extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/illustrations/call.png"))); // NOI18N
 
-        jTextField2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField2.setText("Enter Number");
+        contact.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        contact.setForeground(new java.awt.Color(204, 204, 204));
+        contact.setText("Enter Number");
+        contact.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                contactMouseClicked(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
         jLabel3.setText("Git");
@@ -312,13 +317,23 @@ public class Frame1 extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/illustrations/mail.png"))); // NOI18N
 
-        jTextField3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField3.setText("Enter E-Mail");
+        mail.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        mail.setForeground(new java.awt.Color(204, 204, 204));
+        mail.setText("Enter E-Mail");
+        mail.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mailMouseClicked(evt);
+            }
+        });
 
-        jTextField4.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField4.setText("Enter url");
+        git.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        git.setForeground(new java.awt.Color(204, 204, 204));
+        git.setText("Enter url");
+        git.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                gitMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -327,13 +342,13 @@ public class Frame1 extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jTextField2)
+                        .addComponent(contact)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))
+                            .addComponent(git)
+                            .addComponent(mail, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
@@ -348,15 +363,15 @@ public class Frame1 extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                    .addComponent(contact, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField3)
+                    .addComponent(mail)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField4)
+                    .addComponent(git)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
@@ -500,6 +515,24 @@ public class Frame1 extends javax.swing.JFrame {
 // TODO add your handling code here:
     }//GEN-LAST:event_skill4MouseClicked
 
+    private void contactMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMouseClicked
+        contact.setText("");
+        contact.setForeground(Color.black);
+
+    }//GEN-LAST:event_contactMouseClicked
+
+    private void mailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mailMouseClicked
+        mail.setText("");
+        mail.setForeground(Color.black);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mailMouseClicked
+
+    private void gitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gitMouseClicked
+        git.setText("");
+        git.setForeground(Color.black);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gitMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -541,7 +574,9 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JTextField cer3;
     private javax.swing.JTextField cer4;
     private javax.swing.JTextField cer5;
+    private javax.swing.JTextField contact;
     private javax.swing.Box.Filler filler1;
+    private javax.swing.JTextField git;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -561,9 +596,7 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField mail;
     private javax.swing.JTextArea profiletarea;
     private javax.swing.JTextField skill1;
     private javax.swing.JTextField skill2;
