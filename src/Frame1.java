@@ -459,7 +459,7 @@ public class Frame1 extends javax.swing.JFrame {
         String git1 = git.getText();
 
         PrintFrame obj = new PrintFrame();
-        obj.certificates.setText(text);
+        obj.profile.setText(text);
         obj.name.setText(n);
         obj.numb.setText(contact1);
         obj.giturl.setText(git1);
