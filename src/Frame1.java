@@ -16,8 +16,6 @@ import java.awt.print.*;
  */
 public class Frame1 extends javax.swing.JFrame {
 
-    private Color selectedColor = null;
-
     /**
      * Creates new form Frame1
      */
@@ -612,8 +610,7 @@ public class Frame1 extends javax.swing.JFrame {
         obj.certificates.setText(t1);
         obj.skill.setText(t2);
         obj.experience.setText(t3);
-        obj.ColorPanel.setBackground(selectedColor);
-        System.out.println(selectedColor);
+        obj.ColorPanel.setBackground(jPanel1.getBackground());
         obj.setVisible(true);
         dispose();
 // TODO add your handling code here:
