@@ -93,7 +93,7 @@ public class PrintFrame extends javax.swing.JFrame {
         name.setBackground(new java.awt.Color(255, 255, 255));
         name.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        name.setText("jLabel3");
+        name.setText("NAME");
         name.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 204, 204), new java.awt.Color(255, 153, 153)));
         name.setOpaque(true);
         jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 440, 70));
