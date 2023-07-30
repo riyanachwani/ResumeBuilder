@@ -63,6 +63,11 @@ public class Frame1 extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        skill5 = new javax.swing.JTextField();
+        skill6 = new javax.swing.JTextField();
+        skill7 = new javax.swing.JTextField();
+        skill8 = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -75,11 +80,11 @@ public class Frame1 extends javax.swing.JFrame {
         filler1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(255, 153, 153), new java.awt.Color(255, 153, 153), null));
         jPanel2.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 155, 10, 580));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TECHNICAL SKILLS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 0, 18))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "SKILLS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 0, 18))); // NOI18N
 
         skill1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         skill1.setForeground(new java.awt.Color(204, 204, 204));
-        skill1.setText("Skill 1");
+        skill1.setText("Java");
         skill1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 skill1MouseClicked(evt);
@@ -88,7 +93,7 @@ public class Frame1 extends javax.swing.JFrame {
 
         skill2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         skill2.setForeground(new java.awt.Color(204, 204, 204));
-        skill2.setText("Skill 2");
+        skill2.setText("MySQL");
         skill2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 skill2MouseClicked(evt);
@@ -97,7 +102,7 @@ public class Frame1 extends javax.swing.JFrame {
 
         skill3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         skill3.setForeground(new java.awt.Color(204, 204, 204));
-        skill3.setText("Skill 3");
+        skill3.setText("HTML");
         skill3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 skill3MouseClicked(evt);
@@ -106,7 +111,7 @@ public class Frame1 extends javax.swing.JFrame {
 
         skill4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         skill4.setForeground(new java.awt.Color(204, 204, 204));
-        skill4.setText("Skill 4");
+        skill4.setText("CSS");
         skill4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 skill4MouseClicked(evt);
@@ -119,12 +124,13 @@ public class Frame1 extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(skill1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
-                    .addComponent(skill4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
-                    .addComponent(skill3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
-                    .addComponent(skill2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(skill4, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(skill3, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(skill2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                        .addComponent(skill1, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,7 +146,7 @@ public class Frame1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 560, 240));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 210, 240));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "EDUCATION", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 0, 18))); // NOI18N
 
@@ -218,7 +224,7 @@ public class Frame1 extends javax.swing.JFrame {
 
         cer1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         cer1.setForeground(new java.awt.Color(204, 204, 204));
-        cer1.setText("Certificate 1");
+        cer1.setText("Java - Coursera");
         cer1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cer1MouseClicked(evt);
@@ -227,7 +233,7 @@ public class Frame1 extends javax.swing.JFrame {
 
         cer2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         cer2.setForeground(new java.awt.Color(204, 204, 204));
-        cer2.setText("Certificate 2");
+        cer2.setText("HTML - GreatLearning");
         cer2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cer2MouseClicked(evt);
@@ -236,7 +242,7 @@ public class Frame1 extends javax.swing.JFrame {
 
         cer3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         cer3.setForeground(new java.awt.Color(204, 204, 204));
-        cer3.setText("Certificate 3");
+        cer3.setText("MySQL - GreatLearning");
         cer3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cer3MouseClicked(evt);
@@ -419,6 +425,73 @@ public class Frame1 extends javax.swing.JFrame {
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
 
+        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "EXPERIENCE/PROJECTS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 0, 18))); // NOI18N
+
+        skill5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        skill5.setForeground(new java.awt.Color(204, 204, 204));
+        skill5.setText("Java Intern - CodeClause (1 month)");
+        skill5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                skill5MouseClicked(evt);
+            }
+        });
+
+        skill6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        skill6.setForeground(new java.awt.Color(204, 204, 204));
+        skill6.setText("Java Intern - LetsGrowMore (1 month)");
+        skill6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                skill6MouseClicked(evt);
+            }
+        });
+
+        skill7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        skill7.setForeground(new java.awt.Color(204, 204, 204));
+        skill7.setText("Full Stack Web Intern - Bharat Intern (1 month)");
+        skill7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                skill7MouseClicked(evt);
+            }
+        });
+
+        skill8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        skill8.setForeground(new java.awt.Color(204, 204, 204));
+        skill8.setText("Java Intern - TechnoHacks (1 month)");
+        skill8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                skill8MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(skill5)
+                    .addComponent(skill6, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                    .addComponent(skill7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(skill8))
+                .addContainerGap())
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(skill5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(skill6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(skill7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(skill8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 500, 340, -1));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 810, 750));
 
         jPanel7.setBackground(new java.awt.Color(255, 204, 204));
@@ -459,6 +532,9 @@ public class Frame1 extends javax.swing.JFrame {
         String git1 = git.getText();
         String ed1 = education1.getText();
         String ed2 = education2.getText();
+        String c1 = cer1.getText();
+        String c2 = cer2.getText();
+
         ed1 = "<html>" + ed1.replaceAll("\n", "<br>") + "</html>";
         ed2 = "<html>" + ed2.replaceAll("\n", "<br>") + "</html>";
 
@@ -484,24 +560,6 @@ public class Frame1 extends javax.swing.JFrame {
         profiletarea.setFont(customFont);
 // TODO add your handling code here:
     }//GEN-LAST:event_profiletareaMouseClicked
-
-    private void cer1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cer1MouseClicked
-        cer1.setText("");
-        cer1.setForeground(Color.black);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cer1MouseClicked
-
-    private void cer2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cer2MouseClicked
-        cer2.setText("");
-        cer2.setForeground(Color.black);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cer2MouseClicked
-
-    private void cer3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cer3MouseClicked
-        cer3.setText("");
-        cer3.setForeground(Color.black);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cer3MouseClicked
 
     private void syearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_syearMouseClicked
         // TODO add your handling code here:
@@ -557,6 +615,40 @@ public class Frame1 extends javax.swing.JFrame {
     private void syearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syearActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_syearActionPerformed
+
+    private void skill5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skill5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_skill5MouseClicked
+
+    private void skill6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skill6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_skill6MouseClicked
+
+    private void skill7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skill7MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_skill7MouseClicked
+
+    private void skill8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skill8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_skill8MouseClicked
+
+    private void cer3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cer3MouseClicked
+        cer3.setText("");
+        cer3.setForeground(Color.black);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cer3MouseClicked
+
+    private void cer2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cer2MouseClicked
+        cer2.setText("");
+        cer2.setForeground(Color.black);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cer2MouseClicked
+
+    private void cer1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cer1MouseClicked
+        cer1.setText("");
+        cer1.setForeground(Color.black);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cer1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -616,6 +708,7 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
@@ -626,6 +719,10 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JTextField skill2;
     private javax.swing.JTextField skill3;
     private javax.swing.JTextField skill4;
+    private javax.swing.JTextField skill5;
+    private javax.swing.JTextField skill6;
+    private javax.swing.JTextField skill7;
+    private javax.swing.JTextField skill8;
     private javax.swing.JTextField syear;
     // End of variables declaration//GEN-END:variables
 }
