@@ -16,11 +16,14 @@ import java.awt.print.*;
  */
 public class Frame1 extends javax.swing.JFrame {
 
+    public Color selectedColor;
+
     /**
      * Creates new form Frame1
      */
     public Frame1() {
         initComponents();
+
     }
 
     /**
@@ -32,7 +35,10 @@ public class Frame1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        jColorChooser = new javax.swing.JColorChooser();
         jPanel2 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 7), new java.awt.Dimension(0, 7), new java.awt.Dimension(32767, 7));
         jPanel3 = new javax.swing.JPanel();
         skill1 = new javax.swing.JTextField();
@@ -50,6 +56,7 @@ public class Frame1 extends javax.swing.JFrame {
         cer1 = new javax.swing.JTextField();
         cer2 = new javax.swing.JTextField();
         cer3 = new javax.swing.JTextField();
+        cer4 = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         profiletarea = new javax.swing.JTextArea();
@@ -60,16 +67,27 @@ public class Frame1 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         mail = new javax.swing.JTextField();
         git = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
-        skill5 = new javax.swing.JTextField();
-        skill6 = new javax.swing.JTextField();
-        skill7 = new javax.swing.JTextField();
-        skill8 = new javax.swing.JTextField();
+        pro1 = new javax.swing.JTextField();
+        pro2 = new javax.swing.JTextField();
+        pro3 = new javax.swing.JTextField();
+        pro4 = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jColorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jColorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -77,8 +95,19 @@ public class Frame1 extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setText("NAME");
+        jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 153), new java.awt.Color(255, 153, 153)));
+        jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 530, 70));
+
         filler1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(255, 153, 153), new java.awt.Color(255, 153, 153), null));
-        jPanel2.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 155, 10, 580));
+        jPanel2.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 155, 10, 640));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "SKILLS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 0, 18))); // NOI18N
 
@@ -126,10 +155,9 @@ public class Frame1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(skill4, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(skill3, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(skill2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                        .addComponent(skill1, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addComponent(skill3, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(skill2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                    .addComponent(skill1, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -146,7 +174,7 @@ public class Frame1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 210, 240));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, 210, 240));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "EDUCATION", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 0, 18))); // NOI18N
 
@@ -197,34 +225,35 @@ public class Frame1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGap(0, 114, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(syear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dyear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addComponent(dyear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(syear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(28, Short.MAX_VALUE)
                 .addComponent(syear, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(28, 28, 28)
                 .addComponent(dyear, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
 
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 210, 340));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 210, 390));
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CERTIFICATES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 0, 18))); // NOI18N
 
         cer1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         cer1.setForeground(new java.awt.Color(204, 204, 204));
-        cer1.setText("Java - Coursera");
+        cer1.setText("JAVA PROGRAMMING certificate from GreatLearning");
         cer1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cer1MouseClicked(evt);
@@ -233,7 +262,7 @@ public class Frame1 extends javax.swing.JFrame {
 
         cer2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         cer2.setForeground(new java.awt.Color(204, 204, 204));
-        cer2.setText("HTML - GreatLearning");
+        cer2.setText("PRINCIPLES OF SECURE CODING certificate from Coursera");
         cer2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cer2MouseClicked(evt);
@@ -242,10 +271,19 @@ public class Frame1 extends javax.swing.JFrame {
 
         cer3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         cer3.setForeground(new java.awt.Color(204, 204, 204));
-        cer3.setText("MySQL - GreatLearning");
+        cer3.setText("MySQL BASICS certificate from GreatLearning");
         cer3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cer3MouseClicked(evt);
+            }
+        });
+
+        cer4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        cer4.setForeground(new java.awt.Color(204, 204, 204));
+        cer4.setText("INTRODUCTION TO HTML certificate from Coursera");
+        cer4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cer4MouseClicked(evt);
             }
         });
 
@@ -253,12 +291,13 @@ public class Frame1 extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+            .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(cer3)
-                    .addComponent(cer2)
-                    .addComponent(cer1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cer3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cer2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cer1, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
+                    .addComponent(cer4))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -269,10 +308,12 @@ public class Frame1 extends javax.swing.JFrame {
                 .addComponent(cer2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cer3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cer4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 560, 180));
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 560, 230));
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PROFILE", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 0, 18))); // NOI18N
 
@@ -353,20 +394,17 @@ public class Frame1 extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(contact)
+                        .addComponent(contact, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(git)
-                            .addComponent(mail, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(git)
+                            .addComponent(mail))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
@@ -389,25 +427,23 @@ public class Frame1 extends javax.swing.JFrame {
 
         jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 210, 230));
 
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("NAME");
-        jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 153), new java.awt.Color(255, 153, 153)));
-        jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTextField1MouseClicked(evt);
-            }
-        });
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 530, 70));
-
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jButton1.setBackground(new java.awt.Color(153, 153, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jButton1.setText("Next");
+        jButton1.setText("Create");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setBackground(new java.awt.Color(153, 153, 255));
+        jButton2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jButton2.setText("Choose Color");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -416,7 +452,9 @@ public class Frame1 extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(674, Short.MAX_VALUE)
+                .addContainerGap(526, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -424,7 +462,9 @@ public class Frame1 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(54, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -432,39 +472,39 @@ public class Frame1 extends javax.swing.JFrame {
 
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "EXPERIENCE/PROJECTS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 0, 18))); // NOI18N
 
-        skill5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        skill5.setForeground(new java.awt.Color(204, 204, 204));
-        skill5.setText("Java Intern - CodeClause (1 month)");
-        skill5.addMouseListener(new java.awt.event.MouseAdapter() {
+        pro1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        pro1.setForeground(new java.awt.Color(204, 204, 204));
+        pro1.setText("Java Intern - CodeClause (1 month)");
+        pro1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                skill5MouseClicked(evt);
+                pro1MouseClicked(evt);
             }
         });
 
-        skill6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        skill6.setForeground(new java.awt.Color(204, 204, 204));
-        skill6.setText("Java Intern - LetsGrowMore (1 month)");
-        skill6.addMouseListener(new java.awt.event.MouseAdapter() {
+        pro2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        pro2.setForeground(new java.awt.Color(204, 204, 204));
+        pro2.setText("Java Intern - LetsGrowMore (1 month)");
+        pro2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                skill6MouseClicked(evt);
+                pro2MouseClicked(evt);
             }
         });
 
-        skill7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        skill7.setForeground(new java.awt.Color(204, 204, 204));
-        skill7.setText("Full Stack Web Intern - Bharat Intern (1 month)");
-        skill7.addMouseListener(new java.awt.event.MouseAdapter() {
+        pro3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        pro3.setForeground(new java.awt.Color(204, 204, 204));
+        pro3.setText("Full Stack Web Intern - Bharat Intern (1 month)");
+        pro3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                skill7MouseClicked(evt);
+                pro3MouseClicked(evt);
             }
         });
 
-        skill8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        skill8.setForeground(new java.awt.Color(204, 204, 204));
-        skill8.setText("Java Intern - TechnoHacks (1 month)");
-        skill8.addMouseListener(new java.awt.event.MouseAdapter() {
+        pro4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        pro4.setForeground(new java.awt.Color(204, 204, 204));
+        pro4.setText("Java Intern - TechnoHacks (1 month)");
+        pro4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                skill8MouseClicked(evt);
+                pro4MouseClicked(evt);
             }
         });
 
@@ -475,29 +515,29 @@ public class Frame1 extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(skill5)
-                    .addComponent(skill6, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
-                    .addComponent(skill7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(skill8))
+                    .addComponent(pro1)
+                    .addComponent(pro2, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                    .addComponent(pro3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(pro4))
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(skill5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pro1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(skill6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pro2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(skill7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pro3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(skill8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pro4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 500, 340, 240));
+        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 550, 340, 240));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 810, 750));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 810, 800));
 
         jPanel7.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -540,14 +580,22 @@ public class Frame1 extends javax.swing.JFrame {
         String c1 = cer1.getText();
         String c2 = cer2.getText();
         String c3 = cer3.getText();
+        String c4 = cer4.getText();
         String s1 = skill1.getText();
         String s2 = skill2.getText();
         String s3 = skill3.getText();
         String s4 = skill4.getText();
+        String p1 = pro1.getText();
+        String p2 = pro2.getText();
+        String p3 = pro3.getText();
+        String p4 = pro4.getText();
 
         ed1 = "<html>" + ed1.replaceAll("\n", "<br>") + "</html>";
         ed2 = "<html>" + ed2.replaceAll("\n", "<br>") + "</html>";
-        String t1 = "<html><ul><li>" + c1 + "</li><li>" + c2 + "</li><li>" + c3 + "</li></ul></html>";
+        String t1 = "<html><ul><li>" + c1 + "</li><li>" + c2 + "</li><li>" + c3 + "</li><li>" + c4 + "</li></ul></html>";
+        String t2 = "<html><ul><li>" + s1 + "</li><li>" + s2 + "</li><li>" + s3 + "</li><li>" + s4 + "</li></ul></html>";
+        String t3 = "<html><ul><li>" + p1 + "</li><li>" + p2 + "</li><li>" + p3 + "</li><li>" + p4 + "</li></ul></html>";
+
         PrintFrame obj = new PrintFrame();
         obj.profile.setText(text);
         obj.name.setText(n);
@@ -559,6 +607,8 @@ public class Frame1 extends javax.swing.JFrame {
         obj.schoolyear.setText(year1);
         obj.degreeyear.setText(year2);
         obj.certificates.setText(t1);
+        obj.skill.setText(t2);
+        obj.experience.setText(t3);
 
         obj.setVisible(true);
         dispose();
@@ -582,28 +632,19 @@ public class Frame1 extends javax.swing.JFrame {
     }//GEN-LAST:event_dyearMouseClicked
 
     private void skill1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skill1MouseClicked
-        skill1.setText("");
         skill1.setForeground(Color.black);
-
-        // TODO add your handling code here:
     }//GEN-LAST:event_skill1MouseClicked
 
     private void skill2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skill2MouseClicked
-        skill2.setText("");
         skill2.setForeground(Color.black);
-// TODO add your handling code here:
     }//GEN-LAST:event_skill2MouseClicked
 
     private void skill3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skill3MouseClicked
-        skill3.setText("");
         skill3.setForeground(Color.black);
-// TODO add your handling code here:
     }//GEN-LAST:event_skill3MouseClicked
 
     private void skill4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skill4MouseClicked
-        skill4.setText("");
         skill4.setForeground(Color.black);
-// TODO add your handling code here:
     }//GEN-LAST:event_skill4MouseClicked
 
     private void contactMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMouseClicked
@@ -628,36 +669,37 @@ public class Frame1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_syearActionPerformed
 
-    private void skill5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skill5MouseClicked
+    private void pro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pro1MouseClicked
+        pro1.setForeground(Color.black);
         // TODO add your handling code here:
-    }//GEN-LAST:event_skill5MouseClicked
+    }//GEN-LAST:event_pro1MouseClicked
 
-    private void skill6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skill6MouseClicked
+    private void pro2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pro2MouseClicked
+        pro2.setForeground(Color.black);
         // TODO add your handling code here:
-    }//GEN-LAST:event_skill6MouseClicked
+    }//GEN-LAST:event_pro2MouseClicked
 
-    private void skill7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skill7MouseClicked
+    private void pro3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pro3MouseClicked
+        pro3.setForeground(Color.black);
         // TODO add your handling code here:
-    }//GEN-LAST:event_skill7MouseClicked
+    }//GEN-LAST:event_pro3MouseClicked
 
-    private void skill8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skill8MouseClicked
+    private void pro4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pro4MouseClicked
+        pro4.setForeground(Color.black);
         // TODO add your handling code here:
-    }//GEN-LAST:event_skill8MouseClicked
+    }//GEN-LAST:event_pro4MouseClicked
 
     private void cer3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cer3MouseClicked
-        cer3.setText("");
         cer3.setForeground(Color.black);
         // TODO add your handling code here:
     }//GEN-LAST:event_cer3MouseClicked
 
     private void cer2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cer2MouseClicked
-        cer2.setText("");
         cer2.setForeground(Color.black);
         // TODO add your handling code here:
     }//GEN-LAST:event_cer2MouseClicked
 
     private void cer1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cer1MouseClicked
-        cer1.setText("");
         cer1.setForeground(Color.black);
         // TODO add your handling code here:
     }//GEN-LAST:event_cer1MouseClicked
@@ -666,6 +708,26 @@ public class Frame1 extends javax.swing.JFrame {
         jTextField1.setText("");
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1MouseClicked
+
+    private void cer4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cer4MouseClicked
+        cer4.setForeground(Color.black);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cer4MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        PrintFrame obj = new PrintFrame();
+        Color initialColor = jPanel1.getBackground();
+
+        Color selectedColor = jColorChooser.showDialog(this, "Choose Color", initialColor);
+
+        if (selectedColor != null) {
+            jPanel1.setBackground(selectedColor);
+            jButton1.setBackground(selectedColor);
+            jButton2.setBackground(selectedColor);
+            jButton2.setBackground(selectedColor);
+            obj.ColorPanel.setBackground(selectedColor);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -706,6 +768,7 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JTextField cer1;
     private javax.swing.JTextField cer2;
     private javax.swing.JTextField cer3;
+    private javax.swing.JTextField cer4;
     private javax.swing.JTextField contact;
     private javax.swing.JTextField dyear;
     private javax.swing.JTextArea education1;
@@ -713,6 +776,9 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.Box.Filler filler1;
     private javax.swing.JTextField git;
     private javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton2;
+    private javax.swing.JColorChooser jColorChooser;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -731,15 +797,15 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField mail;
+    private javax.swing.JTextField pro1;
+    private javax.swing.JTextField pro2;
+    private javax.swing.JTextField pro3;
+    private javax.swing.JTextField pro4;
     private javax.swing.JTextArea profiletarea;
     private javax.swing.JTextField skill1;
     private javax.swing.JTextField skill2;
     private javax.swing.JTextField skill3;
     private javax.swing.JTextField skill4;
-    private javax.swing.JTextField skill5;
-    private javax.swing.JTextField skill6;
-    private javax.swing.JTextField skill7;
-    private javax.swing.JTextField skill8;
     private javax.swing.JTextField syear;
     // End of variables declaration//GEN-END:variables
 }
