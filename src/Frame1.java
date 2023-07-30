@@ -490,7 +490,7 @@ public class Frame1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 500, 340, -1));
+        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 500, 340, 240));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 810, 750));
 
@@ -534,10 +534,11 @@ public class Frame1 extends javax.swing.JFrame {
         String ed2 = education2.getText();
         String c1 = cer1.getText();
         String c2 = cer2.getText();
+        String c3 = cer3.getText();
 
         ed1 = "<html>" + ed1.replaceAll("\n", "<br>") + "</html>";
         ed2 = "<html>" + ed2.replaceAll("\n", "<br>") + "</html>";
-
+        String t1 = "<html><ul><li>" + c1 + "</li><li>" + c2 + "</li><li>" + c3 + "</li></ul></html>";
         PrintFrame obj = new PrintFrame();
         obj.profile.setText(text);
         obj.name.setText(n);
@@ -548,6 +549,8 @@ public class Frame1 extends javax.swing.JFrame {
         obj.email.setText(mail1);
         obj.schoolyear.setText(year1);
         obj.degreeyear.setText(year2);
+        obj.certificates.setText(t1);
+
         obj.setVisible(true);
         dispose();
 // TODO add your handling code here:
