@@ -16,7 +16,7 @@ import java.awt.print.*;
  */
 public class Frame1 extends javax.swing.JFrame {
 
-    public Color selectedColor;
+    private Color selectedColor = null;
 
     /**
      * Creates new form Frame1
@@ -77,6 +77,9 @@ public class Frame1 extends javax.swing.JFrame {
         pro4 = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+
+        jColorChooser.setBackground(new java.awt.Color(204, 204, 255));
+        jColorChooser.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 204, 204), new java.awt.Color(255, 153, 153)));
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -609,7 +612,8 @@ public class Frame1 extends javax.swing.JFrame {
         obj.certificates.setText(t1);
         obj.skill.setText(t2);
         obj.experience.setText(t3);
-
+        obj.ColorPanel.setBackground(selectedColor);
+        System.out.println(selectedColor);
         obj.setVisible(true);
         dispose();
 // TODO add your handling code here:
@@ -725,7 +729,6 @@ public class Frame1 extends javax.swing.JFrame {
             jButton1.setBackground(selectedColor);
             jButton2.setBackground(selectedColor);
             jButton2.setBackground(selectedColor);
-            obj.ColorPanel.setBackground(selectedColor);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
