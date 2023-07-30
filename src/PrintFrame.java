@@ -327,8 +327,8 @@ public class PrintFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
-                .addComponent(experience, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+                .addComponent(experience, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44))
         );
 
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 570, 270, 240));
