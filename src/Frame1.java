@@ -393,6 +393,11 @@ public class Frame1 extends javax.swing.JFrame {
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("NAME");
         jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 153), new java.awt.Color(255, 153, 153)));
+        jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField1MouseClicked(evt);
+            }
+        });
         jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 530, 70));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
@@ -535,6 +540,10 @@ public class Frame1 extends javax.swing.JFrame {
         String c1 = cer1.getText();
         String c2 = cer2.getText();
         String c3 = cer3.getText();
+        String s1 = skill1.getText();
+        String s2 = skill2.getText();
+        String s3 = skill3.getText();
+        String s4 = skill4.getText();
 
         ed1 = "<html>" + ed1.replaceAll("\n", "<br>") + "</html>";
         ed2 = "<html>" + ed2.replaceAll("\n", "<br>") + "</html>";
@@ -652,6 +661,11 @@ public class Frame1 extends javax.swing.JFrame {
         cer1.setForeground(Color.black);
         // TODO add your handling code here:
     }//GEN-LAST:event_cer1MouseClicked
+
+    private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
+        jTextField1.setText("");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1MouseClicked
 
     /**
      * @param args the command line arguments
