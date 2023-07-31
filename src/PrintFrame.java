@@ -427,113 +427,72 @@ public class PrintFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // Get the default printer job instance, which allows us to interact with the printer
         PrinterJob job = PrinterJob.getPrinterJob();
 
-// Display the print dialog to allow the user to choose printer settings and confirm printing
         if (job.printDialog()) {
             try {
-                // Set the desired resolution (dots per inch) for the image
                 int dpi = 1200;
 
-                // Calculate the scaling factor to achieve the desired DPI
                 double scaleFactor = dpi / 72.0; // 72 DPI is the default resolution
 
-                // Calculate the width and height of the BufferedImage based on the panel size and the desired DPI
                 int width = (int) (jPanel1.getWidth() * scaleFactor);
                 int height = (int) (jPanel1.getHeight() * scaleFactor);
 
-                // Create a BufferedImage with the calculated width, height, and RGB color type
                 BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 
-                // Create a Graphics2D object to draw on the BufferedImage
                 Graphics2D graphics2D = image.createGraphics();
 
-                // Scale the graphics to the desired DPI, effectively increasing the resolution of the image
                 graphics2D.scale(scaleFactor, scaleFactor);
 
-                // Print the content of jPanel1 to the BufferedImage, effectively capturing the panel content
                 jPanel1.print(graphics2D);
-
-                // Create a File object to specify the output file path for the generated PDF
                 File outputFile = new File("panel_content.pdf");
 
-                // Write the BufferedImage to the PDF file using Apache PDFBox library
                 ImageIO.write(image, "pdf", outputFile);
-
-                // Create a set of attributes to specify printing options (e.g., paper size, orientation, etc.)
                 PrintRequestAttributeSet attr = new HashPrintRequestAttributeSet();
 
-                // Add ISO A4 as the media size (standard A4 paper size: 210 x 297 mm)
                 attr.add(MediaSizeName.ISO_A4);
-
-                // Set the orientation to portrait (vertically aligned)
                 attr.add(OrientationRequested.PORTRAIT);
-
-                // Set the print quality to high
                 attr.add(PrintQuality.HIGH);
-
-                // Set the printer resolution to the desired DPI
                 attr.add(new PrinterResolution(dpi, dpi, PrinterResolution.DPI));
-
-                // Set the number of sides to be printed (in this case, one-sided printing)
                 attr.add(Sides.ONE_SIDED);
 
-                // Set the ImagePrintable instance as the Printable for the printer job
                 job.setPrintable(new ImagePrintable(image, job.getPrintService()));
 
-                // Print the panel content to the selected printer with the specified print attributes
                 job.print(attr);
             } catch (PrinterException | IOException ex) {
-                // Handle any exceptions that may occur during the printing process
                 ex.printStackTrace();
             }
         }
-
-        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ColorPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ColorPanelMouseClicked
-
-        // TODO add your handling code here:
     }//GEN-LAST:event_ColorPanelMouseClicked
 
     /**
      * @param args the command line arguments
      */
-    // Define a class that implements the Printable interface, which is used for printing custom content
     private static class ImagePrintable implements Printable {
 
-        // Declare two instance variables to store the BufferedImage and PrintService
         private final BufferedImage image;
         private final PrintService printService;
 
-        // Constructor to initialize the instance variables when an object of this class is created
         public ImagePrintable(BufferedImage image, PrintService printService) {
-            // Store the provided BufferedImage and PrintService in the instance variables
             this.image = image;
             this.printService = printService;
         }
 
-        // Implement the print() method from the Printable interface
         @Override
         public int print(Graphics g, PageFormat pageFormat, int pageIndex) {
-            // Check if the current page index is greater than 0, indicating a non-existent page
             if (pageIndex > 0) {
-                // Return a flag indicating that there is no such page to print
                 return Printable.NO_SUCH_PAGE;
             }
 
-            // Cast the Graphics object to Graphics2D, which allows more advanced graphics operations
             Graphics2D g2d = (Graphics2D) g;
 
-            // Translate the origin of the graphics to the starting point of the printable area
             g2d.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
 
-            // Draw the BufferedImage on the printable area, scaling it to fit the page
             g2d.drawImage(image, 0, 0, (int) pageFormat.getImageableWidth(), (int) pageFormat.getImageableHeight(), null);
 
-            // Return a flag indicating that the page exists and has been printed successfully
             return Printable.PAGE_EXISTS;
         }
     }
