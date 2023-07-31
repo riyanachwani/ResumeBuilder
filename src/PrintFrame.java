@@ -392,6 +392,7 @@ public class PrintFrame extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel5.setText("Resume Builder");
 
+        jButton1.setBackground(new java.awt.Color(255, 204, 204));
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jButton1.setText("Print/ Save as pdf");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
