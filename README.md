@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="# Resume Builder"></a>
-  Resume Builder 💙
+  Resume Builder 📑
 </h1>
 
 ## `Project Title`
