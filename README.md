@@ -25,6 +25,9 @@ To run the Resume Builder, you need to have the following software installed on 
 - Java
 
 ## `Installation`
-- Clone the repository: https://github.com/riyanachwani/ResumeBuilder.git
+- Clone the repository:
+```bash
+   git clone https://github.com/riyanachwani/ResumeBuilder.git
+```
 - Open the project folder in preferred IDE.
 - Run the project in your IDE.
